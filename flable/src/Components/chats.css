@@ -13,7 +13,10 @@
     font-size: 16px;
     align-items: center;
     justify-content: end;
+    cursor: pointer;
 }
+
+
 
 .days{
     color: rgb(161, 161, 158);
