@@ -25,6 +25,11 @@
 .logoimg2{
     padding-left: 20px;
     height: 20px;
+    cursor: pointer;
+}
+
+.logoimg2:hover{
+    transform: scale(1.1);
 }
 
 .profimg{
