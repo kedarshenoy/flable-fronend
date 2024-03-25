@@ -11,7 +11,7 @@ return <>
 
                        </select>
                         <input className='dropdown' type='text' placeholder='Ask Marco' style={{width:'70%',marginLeft:'10px',marginRight:'10px'}}></input>
-                        <button className='button'>New Chat</button> 
+                        <button className='button'>Ask</button> 
             </div>
         </>
 }
