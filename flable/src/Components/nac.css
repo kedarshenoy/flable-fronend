@@ -1,0 +1,65 @@
+.Navbars{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid rgb(224, 224, 224);
+    z-index: 1;
+}
+
+.leftnav{
+    display: flex;
+    align-items: center;
+}
+
+.navright{
+    display: flex;
+    align-items: center;
+}
+
+.logoimg{
+    height: 40px;
+}
+.logoimg2{
+    padding-left: 20px;
+    height: 20px;
+}
+
+.profimg{
+    height: 40px;
+    padding-left: 10px;
+}
+
+.Slidingbar{
+    /* width: 25%;
+    height: 100vh;
+    border-right: 1.5px solid rgb(224, 224, 224); */
+    position: fixed;
+    top: 0;
+    left: -25%; /* Initially hidden */
+    width: 20%;
+    height:92vh;
+    color: rgb(18, 16, 16);
+    border-right: 1.5px solid rgb(224, 224, 224);
+    transition: left 0.3s ease;
+    position: relative;
+
+}
+
+.Slidingbar.open {
+    left: 0; /* Move to the left to show panel */
+    position: relative;
+
+}
+
+
+
+
+.option{
+    font-size: 17px;
+    padding-top: 20px;
+    padding-left: 10px;
+    color: rgb(0, 0, 0);
+}

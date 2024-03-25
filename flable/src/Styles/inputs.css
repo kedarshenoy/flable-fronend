@@ -1,0 +1,12 @@
+.inputboxes{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dropdown{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 05px;
+    padding-bottom: 05px;
+    font-size: 14px;
+}

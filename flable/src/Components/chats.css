@@ -1,0 +1,85 @@
+
+
+.chatdiv{
+    width:100%;
+    text-align:right;
+    padding-top:20px;
+    padding-right: 20px;
+}
+
+.sharebtns{
+    color: blue;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    justify-content: end;
+}
+
+.days{
+    color: rgb(161, 161, 158);
+    font-size: 13px;
+    /* text-align: center; */
+}
+
+
+.questionaskedbox{
+    text-align: left;
+    width: 50%;
+    margin-left: 50%;
+    margin-top: 5px;    
+
+}
+
+.questionasked{
+    background-color: blue;
+    color: white;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    
+}
+
+.answergivenbox{
+    text-align: left;
+    width: 50%;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.answergiven{
+    background-color:rgb(219, 217, 217);
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+}
+
+.dayschat{
+    height: 75vh;
+    overflow-y: scroll;
+}
+
+.dayschat::-webkit-scrollbar {
+    display: none;
+}
+
+.reactionicons{
+    display: flex;
+    height: 18px;
+    padding: 8px;
+    transition: transform 0.3s ease;
+}
+
+.icons:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.icons{
+    padding: 2px;
+}

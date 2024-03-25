@@ -1,0 +1,51 @@
+.histroybox{
+    transition: left 0.5s ease;
+    border-right: 1.5px solid rgb(224, 224, 224);
+    padding-right: 10px;
+    overflow-y: scroll;
+    width: 20%;
+    height: 92vh;
+}
+
+.histroybox::-webkit-scrollbar {
+    display: none;
+}
+
+.button{
+    background-color:white;
+    border-radius: 05px;
+    border:2px solid rgb(75, 146, 234);
+    color:rgb(75, 146, 234);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 05px;
+    padding-bottom: 05px;
+
+
+}
+
+.histryboxhead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 20px; */
+
+}
+.historydatabox{
+    padding-top: 10px;
+}
+
+
+.dates{
+    color: rgb(181, 181, 176);
+    font-size: 11px;
+}
+
+.questions{
+    font-size: 15px;
+}
+.answersgenerated{
+    color: rgb(153, 153, 148);
+    font-size: 14px;
+    padding-left: 5px;
+}
