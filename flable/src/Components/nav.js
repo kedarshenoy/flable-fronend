@@ -1,5 +1,5 @@
 
-import './nac.css'
+import '../Styles/nac.css'
 import {useState} from 'react'
 import Main from './main';
 

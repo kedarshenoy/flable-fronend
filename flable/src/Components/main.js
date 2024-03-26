@@ -1,5 +1,5 @@
 
-import './main.css'
+import '../Styles/main.css'
 import Chat from './Chats'
 
 const Main=({isPanelOpen})=>{
