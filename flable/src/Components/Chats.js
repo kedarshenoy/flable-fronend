@@ -1,42 +1,19 @@
 import { useState } from 'react';
 import '../Styles/chats.css'
 import Inputs from './Input';
-const Chat=()=>{
-    const [c,setc]=useState('')
-    const [questions,setquestions]=useState([
-        {
-            question:"First Question",
-            answer:"First Answer",
-            response:0
-        },
-        {
-            question:"Second Question",
-            answer:"Second Answer",
-            response:1
-        },
-        {
-            question:"third Question",
-            answer:"third Answer",
-            response:0
-        },
-        {
-            question:"fourth Question",
-            answer:"fourth Answer",
-            response:1
-        },
-        {
-            question:"fifth Question",
-            answer:"fifth Answer",
-            response:2
-        }
-    ])
+import {chatsarrayAtom} from '../atoms';
+import { useRecoilState } from 'recoil';
+import html2pdf from 'html2pdf.js';
+const Chat=({questions,setquestions})=>{
+    const [num,setnum]=useState(0);
+
     const render=()=>{
         let ans=[]
         for(let i=0;i<questions.length;i++) {
                      
            ans.push( <div className='chats'>
                   <div className='questionaskedbox'> 
-                  <div className='days'>Today </div>
+                  <div className='days'>{questions[i].time}</div>
                   <div className='questionasked'>
                       {questions[i].question}
                       </div>
@@ -47,7 +24,7 @@ const Chat=()=>{
                                   <img src={require('../assets/round.png')} alt=''></img>
                               </div>
                               <div style={{marginLeft:"3px", width:'100%'}}>
-                                  <div className='days'>Today </div>
+                                  <div className='days'>{questions[i].time} </div>
                                   <div className='answergiven'> 
                                       {questions[i].answer} 
                                   </div>
@@ -71,10 +48,6 @@ const Chat=()=>{
     }
 
     const change1=(i)=>{
-        // if(a===1){
-        //     seta(0)
-        // }else
-        // seta(1);
 setquestions(prevState=>{
     const updatedArray=[...prevState];
     let prevresponse=updatedArray[i].response;
@@ -95,8 +68,7 @@ setquestions(prevState=>{
         //  setquestions(alter);
         // setc(0);
         // console.log(questions)
-    }
-
+    } 
     const change2=(i)=>{
         // let alter =questions;
         // if (alter[i].response===2){
@@ -115,13 +87,45 @@ setquestions(prevState=>{
         })
 
     }
+
+    const handleShare = async () => {
+        try {
+          await navigator.share({
+            title: 'Share Data',
+            text: 'Check out this data:',
+            url: window.location.href,
+            data: questions 
+          });
+          console.log('Data shared successfully');
+        } catch (error) {
+          console.error('Error sharing data:', error);
+        }
+      };
+
+
+      const handleShare2 = () => {
+        // Select the content you want to convert to PDF
+        const content = document.getElementById('content-to-pdf');
+    
+        // Configure the PDF options
+        const options = {
+          filename: 'page.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+    
+        // Convert the content to PDF
+        html2pdf().set(options).from(content).save();
+      };
+
     return <>
     <div className='chatdiv' style={{}}>
-     <div className='sharebtns'>   <img src={require('../assets/share.png')  } alt='' height={"15px"}></img>Share &nbsp;&nbsp;<img src={require('../assets/export.png') } alt='' height={"16px"}></img>      Export </div>
+     <div className='sharebtns'>   <img src={require('../assets/share.png')  } alt='' height={"15px"} onClick={()=>handleShare()}></img><span onClick={()=>handleShare()}>Share</span> &nbsp;&nbsp;<img src={require('../assets/export.png') } alt='' height={"16px"} onClick={()=>handleShare2()}></img>     <span onClick={()=>handleShare2()}>Export </span>  </div>
     
         <div > 
 
-            <div className='dayschat'>
+            <div className='dayschat' id="content-to-pdf">
                 
                 {/* <div className='chats'>
                     <div className='questionaskedbox'> 
@@ -166,7 +170,7 @@ setquestions(prevState=>{
 
             </div>
 
-            <Inputs></Inputs>
+            <Inputs questions={questions} setquestions={setquestions}  ></Inputs>
 
         </div>
     </div>

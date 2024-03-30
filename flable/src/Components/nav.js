@@ -2,10 +2,15 @@
 import '../Styles/nac.css'
 import {useState} from 'react'
 import Main from './main';
+// import {chatsarrayAtom} from '../atoms';
+// import { useRecoilState } from 'recoil';
 
 
 const Navbar=()=>{
     const [isPanelOpen, setIsPanelOpen] = useState(false);
+    // const [questions,setquestions]=useRecoilState(chatsarrayAtom)
+
+    
 
     const togglePanel = () => {
       setIsPanelOpen(!isPanelOpen);
